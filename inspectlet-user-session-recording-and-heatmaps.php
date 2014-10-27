@@ -27,7 +27,7 @@ function overview() { ?>
 <h2>Inspectlet Analytics</h2>
     <form method="post" action="options.php">
         <?php settings_fields( 'insp-group' ); ?>
-        <p style="width: 70%;">Please paste your Inspectlet Embed JS Code (retrieved from the dashboard) into the field below to start using Inspectlet with Wordpress. If you're having trouble integrating, drop us a line at support@inspectlet.com</p>
+        <p style="width: 70%;">Please paste your Inspectlet Embed JS Code (retrieved from the dashboard) into the field below to start using Inspectlet with Wordpress.<br />If you're having trouble integrating, drop us a line at support@inspectlet.com</p>
         <textarea name="insp_code" id="insp_code" cols="60" rows="15"><?php echo get_option('insp_code'); ?></textarea>
         <p class="submit">
         <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />

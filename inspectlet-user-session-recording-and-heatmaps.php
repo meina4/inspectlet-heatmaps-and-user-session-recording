@@ -14,7 +14,7 @@ Author URI: http://meina4.com
 add_action('admin_menu', 'insp_admin_menu');
 
 function insp_admin_menu() {
-  add_menu_page('Inspectlet JS Code', 'Inspectlet', 'administrator','insp_options', 'overview');
+  add_submenu_page( 'options-general.php', 'Inspectlet JS Code', 'Inspectlet', 'administrator','insp_options', 'overview');
   add_action( 'admin_init', 'register_inspsettings' );
  }
 

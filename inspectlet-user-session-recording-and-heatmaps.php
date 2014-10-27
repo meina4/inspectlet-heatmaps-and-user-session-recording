@@ -23,7 +23,6 @@ function register_inspsettings() {
  } 
 
 function overview() { ?>
-
 <div class="wrap">
 <h2>Inspectlet Analytics</h2>
     <form method="post" action="options.php">
@@ -35,16 +34,14 @@ function overview() { ?>
         </p>
     </form>
 </div>
-
-
 <?php }
 
-function echoinspcode() {
-  echo get_option("insp_code");
+// Register Script
+function inspectlet_scripts() {
+echo get_option("insp_code");
 }
 
-if ( !is_user_logged_in() ) {
-	add_action('wp_footer', 'echoinspcode');
-}
+// Hook into the 'wp_enqueue_scripts' action
+add_action( 'wp_enqueue_scripts', 'inspectlet_scripts' );
 
 ?>

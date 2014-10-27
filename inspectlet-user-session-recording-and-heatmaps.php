@@ -42,6 +42,8 @@ echo get_option("insp_code");
 }
 
 // Hook into the 'wp_enqueue_scripts' action
-add_action( 'wp_enqueue_scripts', 'inspectlet_scripts' );
+if (!is_user_logged_in()){
+    add_action( 'wp_enqueue_scripts', 'inspectlet_scripts' );
+};
 
 ?>

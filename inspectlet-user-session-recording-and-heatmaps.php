@@ -1,13 +1,13 @@
 <?php
 
 /*
-Plugin Name: Inspectlet - User Session Recording and Heatmaps
+Plugin Name: Inspectlet Plus
 Plugin URI: http://www.inspectlet.com
 Description: Inspectlet lets you record visitors as they're using your website.
-Author: Inspectlet
+Author: Francesco
 Version: 1.0
 License: GPL
-Author URI: http://www.inspectlet.com
+Author URI: http://meina4.com
 */
 
 
@@ -43,6 +43,8 @@ function echoinspcode() {
   echo get_option("insp_code");
 }
 
-add_action('wp_footer', 'echoinspcode');
+if ( !is_user_logged_in() ) {
+	add_action('wp_footer', 'echoinspcode');
+}
 
- ?>
+?>
